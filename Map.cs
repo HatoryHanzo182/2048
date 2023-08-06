@@ -24,14 +24,14 @@ namespace TwoThousandFortyEight
         private GameState _state = new GameState();
 
         enum MoveDirection  // List of enumerations of possible 
-        {                     // movements for the mouse only.
+        {                  // movements for the mouse only.
             Left,
             Right,
             Up,
             Down
         }
 
-        public Map()   // Our form constructor Map.
+        public Map()  // Our form constructor Map.
         {
             _random = new Random();
             _appear_label = null!;
@@ -40,7 +40,7 @@ namespace TwoThousandFortyEight
         }
 
         private void Map_Load(object sender, EventArgs e)   // When our form loads, we change the colors of our... 
-        {                                                       // panels and trigger the gameplay logic.
+        {                                                  // panels and trigger the gameplay logic.
             panel_game_field.BackColor = Color.FromArgb(0xBB, 0xAD, 0xA0);
             panel_statistics.BackColor = Color.FromArgb(0xBB, 0xAD, 0xA0);
             panel_sensor.BackColor = Color.FromArgb(0xBB, 0xAD, 0xA0);
@@ -65,7 +65,7 @@ namespace TwoThousandFortyEight
         }
 
         private void AddCell()      // Basically, this is the main gameplay that adds an element...
-        {                              //  to the list of labels and then randomly puts a new block on the panel.
+        {                          // to the list of labels and then randomly puts a new block on the panel.
             List<Label> empty_cell = new List<Label>();
             Label? lbl;
 
@@ -92,7 +92,7 @@ namespace TwoThousandFortyEight
             _appear_label = lbl;
         }
 
-        private void ColorCells()   // The method colors our blocksю.
+        private void ColorCells()  // The method colors our blocksю.
         {
             foreach (var panel_item in panel_game_field.Controls)
             {
@@ -206,7 +206,7 @@ namespace TwoThousandFortyEight
 
         #region Keyboard mechanics.
         private void Map_KeyDown(object sender, KeyEventArgs e)  // When a key is pressed, the method allows the pressed button and...
-        {                                                           // passes it through the enumeration type *MoveDirection*.
+        {                                                       // passes it through the enumeration type *MoveDirection*.
             switch (e.KeyCode)
             {
                 case Keys.Left:
@@ -229,7 +229,7 @@ namespace TwoThousandFortyEight
             }
         }
         
-        private bool MoveLeft()   // Left movement method.
+        private bool MoveLeft()  // Left movement method.
         {
             bool wasMove = false;
 
